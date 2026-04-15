@@ -1,44 +1,298 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>OMEGA Conformity</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  margin-top: 120px;
-  color: #222;
-}
-h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-p {
-  font-size: 14px;
-  color: #555;
-}
-a {
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #ccc;
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OMEGA Conformity</title>
+  <meta name="description" content="OMEGA Testing and Inspection Technology Co. Ltd. - Technical support in CE-related conformity, inspection, and regulatory documentation.">
+  <style>
+    :root{
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --text:#1f2937;
+      --muted:#667085;
+      --line:#d9e1e8;
+      --accent:#0d4f86;
+      --accent-dark:#18324a;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#f8fafc 0%,#eef3f7 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .wrap{
+      max-width:1100px;
+      margin:0 auto;
+      padding:32px 20px 60px;
+    }
+
+    .hero{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:40px 32px;
+      box-shadow:0 10px 30px rgba(0,0,0,.04);
+    }
+
+    .hero-top{
+      display:grid;
+      grid-template-columns:340px 1fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .logo-box{
+      text-align:center;
+    }
+
+    .logo-box img{
+      max-width:100%;
+      width:320px;
+      height:auto;
+      display:block;
+      margin:0 auto;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--accent);
+      margin-bottom:12px;
+    }
+
+    h1{
+      margin:0 0 14px;
+      font-size:38px;
+      line-height:1.15;
+      color:var(--accent-dark);
+    }
+
+    .lead{
+      margin:0 0 22px;
+      font-size:17px;
+      color:var(--muted);
+      max-width:700px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:12px 18px;
+      border-radius:10px;
+      font-weight:700;
+      font-size:14px;
+    }
+
+    .btn-primary{
+      background:var(--accent);
+      color:#fff;
+    }
+
+    .btn-secondary{
+      border:1px solid var(--line);
+      color:var(--accent-dark);
+      background:#fff;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:26px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      box-shadow:0 6px 18px rgba(0,0,0,.03);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--accent-dark);
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .section{
+      margin-top:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px 30px;
+      box-shadow:0 6px 18px rgba(0,0,0,.03);
+    }
+
+    .section h2{
+      margin:0 0 12px;
+      font-size:24px;
+      color:var(--accent-dark);
+    }
+
+    .section p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .contact{
+      margin-top:22px;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px 30px;
+      text-align:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.03);
+    }
+
+    .contact h2{
+      margin:0 0 10px;
+      font-size:24px;
+      color:var(--accent-dark);
+    }
+
+    .contact p{
+      margin:0 0 10px;
+      color:var(--muted);
+    }
+
+    .contact a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      font-size:18px;
+    }
+
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:#7a8896;
+      font-size:13px;
+    }
+
+    @media (max-width:900px){
+      .hero-top{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+
+      .logo-box img{
+        width:260px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:30px;
+      }
+
+      .lead{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .cta-row{
+        justify-content:center;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-top">
+        <div class="logo-box">
+          <img src="omega-logo.png" alt="OMEGA logo">
+        </div>
 
-<h1>OMEGA Testing and Inspection Technology Co. Ltd.</h1>
+        <div>
+          <div class="eyebrow">OMEGA Conformity</div>
+          <h1>Technical support in CE-related conformity, inspection, and regulatory documentation</h1>
+          <p class="lead">
+            OMEGA Testing and Inspection Technology Co. Ltd. provides technical support in product conformity,
+            inspection processes, CE-related documentation, and selected regulatory compliance matters.
+          </p>
 
-<p>Website under development</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:info@omegaconformity.com">Contact Us</a>
+            <a class="btn btn-secondary" href="mailto:info@omegaconformity.com">info@omegaconformity.com</a>
+          </div>
+        </div>
+      </div>
 
-<p>
-Contact:
-<br><br>
-<a href="mailto:info@omegaconformity.com">
-info@omegaconformity.com
-</a>
-</p>
+      <div class="grid">
+        <div class="card">
+          <h3>CE Regulatory Support</h3>
+          <p>Technical support related to CE marking requirements, conformity pathways, and product documentation.</p>
+        </div>
+        <div class="card">
+          <h3>Inspection & Review</h3>
+          <p>Support for inspection-related activities, technical file review, and product information assessment.</p>
+        </div>
+        <div class="card">
+          <h3>Documentation Focus</h3>
+          <p>Structured handling of declarations, reports, markings, labels, and supporting technical records.</p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section">
+      <h2>About</h2>
+      <p>
+        OMEGA focuses on practical technical support for conformity-related processes, with particular attention
+        to CE documentation, inspection logic, and regulatory alignment.
+      </p>
+      <p>
+        Our scope includes support activities connected with technical evaluation, document review, inspection follow-up,
+        and product-specific conformity considerations under applicable regulatory frameworks.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Regulatory Areas</h2>
+      <p>
+        Depending on product scope, support may relate to machinery, low voltage, electromagnetic compatibility,
+        ecodesign, energy labelling, and other CE-related legislative requirements.
+      </p>
+      <p>
+        This website is currently under development. More structured technical information will be added in due course.
+      </p>
+    </section>
+
+    <section class="contact">
+      <h2>Contact</h2>
+      <p>For general inquiries and communication:</p>
+      <a href="mailto:info@omegaconformity.com">info@omegaconformity.com</a>
+    </section>
+
+    <div class="footer">
+      © OMEGA Testing and Inspection Technology Co. Ltd.
+    </div>
+  </div>
 </body>
 </html>
