@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMEGA Conformity | Advanced Technical Inspection & Lab Services</title>
-  <meta name="description" content="Professional technical support for CE Marking, regulatory compliance, testing, and inspection services.">
+  <title>OMEGA | Technical Inspection & Advanced Testing Laboratory</title>
+  <meta name="description" content="Advanced technical verification, CE marking support, and laboratory inspection logic.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     :root {
-      --primary: #ffffff; /* Text color over background */
-      --accent: #2ecc71; /* Modern Green */
-      --bg-overlay: rgba(13, 79, 134, 0.85); /* Deep Blue Overlay */
-      --card-bg: rgba(255, 255, 255, 0.95); /* Light cards over background */
-      --text-dark: #1f2937;
-      --text-light: #667085;
-      --line: #d9e1e8;
+      --primary: #ffffff;
+      --accent: #2ecc71;
+      --bg-overlay: rgba(10, 31, 56, 0.88); /* Daha profesyonel koyu ton */
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --text-dark: #1a202c;
+      --text-light: #4a5568;
     }
 
     * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -22,136 +21,57 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      /* background: URL('omega-lab-building.png') no-repeat center center fixed; */ /* Replace with actual image filename */
-      background: URL('image_5.png') no-repeat center center fixed; /* Replace with actual image filename */
+      /* ARKA PLAN RESMİ BURADA - image_5.png ismini kontrol et */
+      background: URL('image_5.png') no-repeat center center fixed;
       background-size: cover;
       color: var(--primary);
       line-height: 1.7;
     }
 
-    /* Fixed Dark Overlay */
     body::before {
       content: "";
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       background: var(--bg-overlay);
       z-index: -1;
     }
 
-    /* Navigation */
-    nav {
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
+    nav { padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0; width: 100%; z-index: 1000; }
+    .nav-logo { font-weight: 800; color: var(--primary); font-size: 1.8rem; text-decoration: none; letter-spacing: 2px; }
 
-    .nav-logo { font-weight: 800; color: var(--primary); font-size: 1.8rem; text-decoration: none; }
+    .hero { padding: 180px 20px 100px; text-align: center; }
+    .hero h1 { font-size: 3.5rem; margin-bottom: 25px; max-width: 900px; margin: 0 auto 25px; line-height: 1.2; }
+    .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto 40px; }
 
-    /* Hero Section */
-    .hero {
-      padding: 180px 20px 100px;
-      text-align: center;
-    }
-
-    .hero h1 { font-size: 3.5rem; margin-bottom: 25px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.2; color: var(--primary); }
-    .hero p { font-size: 1.35rem; opacity: 0.9; max-width: 750px; margin: 0 auto 35px; }
-
-    .btn {
-      padding: 16px 34px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.3s;
-      display: inline-block;
-    }
+    .btn { padding: 16px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; }
     .btn-primary { background: var(--accent); color: white; }
     .btn-primary:hover { background: #27ae60; transform: translateY(-2px); }
 
-    /* Content Layout */
-    .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+    .section-title { text-align: center; margin-bottom: 60px; }
+    .section-title h2 { font-size: 2.8rem; margin-bottom: 20px; }
+    .section-title .divider { width: 80px; height: 5px; background: var(--accent); margin: 0 auto; }
+
+    /* TESTING & INSPECTION GRID */
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .feature-card { background: var(--card-bg); padding: 40px; border-radius: 15px; color: var(--text-dark); transition: 0.3s; }
+    .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .feature-card i { font-size: 2.5rem; color: #0d4f86; margin-bottom: 20px; }
+    .feature-card h3 { margin-bottom: 15px; color: #1a365d; }
+
+    /* TECHNICAL CONTENT BLOCK */
+    .content-block { background: var(--card-bg); padding: 50px; border-radius: 20px; color: var(--text-dark); margin-bottom: 40px; }
+    .directive-item { border-left: 5px solid #0d4f86; padding-left: 20px; margin-bottom: 30px; }
+    .directive-item h4 { color: #0d4f86; margin: 0 0 10px 0; font-size: 1.2rem; }
+
+    .test-logic { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
+    .test-logic ul { padding-left: 20px; color: var(--text-light); }
+    .test-logic li { margin-bottom: 12px; }
+
+    footer { background: rgba(10, 31, 56, 0.95); padding: 80px 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; max-width: 1200px; margin: 0 auto 50px; }
     
-    .section-title { text-align: center; margin-bottom: 50px; }
-    .section-title h2 { font-size: 2.8rem; color: var(--primary); }
-    .section-title .divider { width: 70px; height: 5px; background: var(--accent); margin: 25px auto; }
-    .section-title p { color: var(--primary); opacity: 0.8; font-size: 1.1rem;}
-
-    /* Modern Features Grid */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 35px;
-    }
-
-    .feature-card {
-      background: var(--card-bg);
-      padding: 45px;
-      border-radius: 15px;
-      transition: 0.3s;
-      color: var(--text-dark);
-    }
-    .feature-card:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.2); transform: translateY(-7px); }
-    .feature-card i { font-size: 3rem; color: #0d4f86; margin-bottom: 25px; }
-    .feature-card h3 { margin-bottom: 20px; color: #18324a; }
-    .feature-card p { color: var(--text-light); }
-
-    /* Regulatory Content Section */
-    .content-block {
-      background: var(--card-bg);
-      padding: 60px;
-      border-radius: 18px;
-      margin-bottom: 50px;
-      color: var(--text-dark);
-    }
-
-    .directive-item {
-      border-left: 5px solid #0d4f86;
-      padding-left: 25px;
-      margin-bottom: 40px;
-    }
-    .directive-item h4 { margin: 0; color: #0d4f86; }
-
-    /* Testing Section Detailed */
-    .test-details {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 40px;
-    }
-    
-    .test-col h4 { color: #0d4f86; margin-top: 0; }
-    .test-col ul { color: var(--text-light); padding-left: 20px; }
-    .test-col ul li { margin-bottom: 10px; }
-
-    /* Contact Footer */
-    footer {
-      background: rgba(24, 50, 74, 0.98);
-      color: white;
-      padding: 70px 20px 30px;
-      text-align: center;
-      margin-top: 60px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 50px;
-      text-align: left;
-      max-width: 1200px;
-      margin: 0 auto 50px;
-    }
-
-    @media (max-width: 900px) {
-      .hero h1 { font-size: 2.5rem; }
-      .test-details { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .test-logic { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -161,86 +81,111 @@
   </nav>
 
   <header class="hero">
-    <h1>Advanced Technical Inspection & Laboratory Services</h1>
-    <p>We provide the critical technical verification required for CE Marking, product safety compliance, and robust market documentation.</p>
-    <a href="#test-scope" class="btn btn-primary">Our Testing Methodology</a>
+    <h1>Global Technical Inspection & Testing Logic</h1>
+    <p>Professional engineering support for CE directives, product safety verification, and laboratory-backed technical documentation.</p>
+    <a href="#inspection" class="btn btn-primary">Our Expertise</a>
   </header>
 
-  <section id="test-scope" class="container">
+  <section id="inspection" class="container">
     <div class="section-title">
-      <h2>Why Testing Matters</h2>
+      <h2>Technical Testing Methodology</h2>
       <div class="divider"></div>
-      <p>Testing is not just a regulatory requirement; it is the vital foundation of product reliability.</p>
     </div>
 
-    <div class="content-block">
-      <div class="test-details">
-        <div class="test-col">
-          <h4>The Core Purpose of Testing</h4>
-          <p>Testing provides empirical data, confirming that a product performs its intended function without posing hazards. It serves two main functions:</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-microchip"></i>
+        <h3>Electrical Safety (LVD)</h3>
+        <p>Comprehensive testing under 2014/35/EU: Ground continuity, insulation resistance, and dielectric strength tests according to EN standards.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-industry"></i>
+        <h3>Machinery Inspection</h3>
+        <p>Validation of Machinery Directive (2006/42/EC) requirements: Safety distance measurements, E-Stop logic verification, and structural stability.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-wave-square"></i>
+        <h3>EMC Verification</h3>
+        <p>Evaluating electromagnetic compatibility (2014/30/EU). Testing immunity and emission levels to ensure interference-free operation.</p>
+      </div>
+    </div>
+
+    <div class="content-block" style="margin-top: 50px;">
+      <div class="test-logic">
+        <div>
+          <h4 style="color:#0d4f86;">Why Technical Inspection is Vital?</h4>
+          <p style="color:var(--text-light);">Inspection is the rigorous process of verifying that a design meets the reality of safety. It is the core of conformity assessment:</p>
           <ul>
-            <li><strong>Verification:</strong> Proof that essential safety requirements are met (e.g., that electrical insulation prevents shock).</li>
-            <li><strong>Risk Mitigation:</strong> Identification of potential failure modes before the product enters the global supply chain.</li>
+            <li>Elimination of manufacturing defects via random sampling.</li>
+            <li>Verification of certified safety components (UL, VDE, TUV).</li>
+            <li>Confirming technical manual accuracy for the end user.</li>
           </ul>
         </div>
-        <div class="test-col">
-          <h4>How OMEGA Approaches Testing</h4>
-          <p>We analyze the "Technical File" and identify the mandatory test standards (EN/ISO) applicable to the product’s scope. Our technical verification process includes:</p>
+        <div>
+          <h4 style="color:#0d4f86;">Documentation Logic</h4>
+          <p style="color:var(--text-light);">A product is only as compliant as its Technical File. We ensure your data is robust:</p>
           <ul>
-            <li><strong>Technical File Audit:</strong> Confirming all supporting test reports from accredited labs are complete and valid.</li>
-            <li><strong>Gap Analysis:</strong> Identifying missing verification data required for specific directives.</li>
-            <li><strong>Witness Testing Support:</strong> Providing expertise during critical test phases.</li>
+            <li><strong>Risk Assessment:</strong> ISO 12100 based hazard identification.</li>
+            <li><strong>Gap Analysis:</strong> Bridging the requirements between regional standards.</li>
+            <li><strong>Market Surveillance:</strong> Preparing files to withstand official audits.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container">
+  <section class="container" style="padding-top: 0;">
     <div class="section-title">
-      <h2>Regulatory Directives Overview</h2>
+      <h2>Regulatory Frameworks</h2>
       <div class="divider"></div>
     </div>
-
     <div class="content-block">
-      <div class="directive-item">
-        <h4>Machinery Directive (2006/42/EC)</h4>
-        <p>Essential safety requirements for machinery, safety components, and related parts. Requires rigorous risk assessment and technical verification of control systems.</p>
-      </div>
-      <div class="directive-item">
-        <h4>Low Voltage Directive (2014/35/EU)</h4>
-        <p>Ensures electrical equipment within specified voltage limits provides high protection against shocks, fires, and mechanical hazards.</p>
-      </div>
-      <div class="directive-item">
-        <h4>EMC Directive (2014/30/EU)</h4>
-        <p>A mandatory requirement ensuring that electrical and electronic equipment operates as intended in its electromagnetic environment without disturbance.</p>
-      </div>
-      <div class="directive-item">
-        <h4>Ecodesign & Energy Labelling (2009/125/EC)</h4>
-        <p>Defines minimum energy efficiency and labeling requirements for energy-related products sold on the EU market.</p>
-      </div>
+        <div class="directive-item">
+            <h4>2006/42/EC - Machinery Safety</h4>
+            <p>Strict safety evaluation for complex industrial systems and safety components.</p>
+        </div>
+        <div class="directive-item">
+            <h4>2014/30/EU - Electromagnetic Compatibility</h4>
+            <p>Ensuring stability in environments with high electronic density.</p>
+        </div>
+        <div class="directive-item">
+            <h4>2014/35/EU - Low Voltage Safety</h4>
+            <p>Protection against electrical risks for consumer and industrial products.</p>
+        </div>
     </div>
   </section>
 
   <footer>
     <div class="footer-grid">
       <div>
-        <h4>OMEGA CONFORMITY</h4>
-        <p>Advanced technical verification, inspection methodology, and regulatory support for global market access.</p>
+        <h4 style="letter-spacing: 1px;">OMEGA TECHNOLOGY</h4>
+        <p style="opacity: 0.7;">Technical bridge between engineering design and regulatory compliance.</p>
       </div>
       <div>
         <h4>Compliance Services</h4>
-        <p>CE Marking Documentation<br>Technical File Audit<br>Risk Assessment Verification<br>Test Report Review</p>
+        <p style="opacity: 0.7;">Technical File Review<br>Safety Test Witnessing<br>Regulatory Gap Analysis<br>Standardization Support</p>
       </div>
       <div>
-        <h4>Contact</h4>
-        <p>Email: <a href="mailto:info@omegaconformity.com" style="color: white;">info@omegaconformity.com</a><br>Request Support: <a href="mailto:info@omegaconformity.com" style="color: white;">Get Support</a></p>
+        <h4>Communication</h4>
+        <p style="opacity: 0.7;">Email: info@omegaconformity.com<br>Support: Click the chat widget for live assistance.</p>
       </div>
     </div>
-    <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
-      <p>© OMEGA Testing and Inspection Technology Co. Ltd. All rights reserved.</p>
+    <div style="opacity: 0.5; font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+        © OMEGA Testing and Inspection Technology Co. Ltd. All rights reserved.
     </div>
   </footer>
+
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69dedca3e956e51c363eac78/1jm78ro5n';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
 
 </body>
 </html>
