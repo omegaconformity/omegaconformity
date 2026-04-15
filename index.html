@@ -3,189 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OMEGA | Technical Inspection & Advanced Testing Laboratory</title>
-  <meta name="description" content="Advanced technical verification, CE marking support, and laboratory inspection logic.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>OMEGA | Website Update</title>
+  <meta name="description" content="OMEGA Testing and Inspection Technology Co. Ltd. website is being updated.">
   <style>
     :root {
-      --primary: #ffffff;
-      --accent: #2ecc71;
-      --bg-overlay: rgba(10, 31, 56, 0.88); /* Daha profesyonel koyu ton */
-      --card-bg: rgba(255, 255, 255, 0.96);
-      --text-dark: #1a202c;
-      --text-light: #4a5568;
+      --overlay: rgba(7, 24, 45, 0.82);
+      --card: rgba(255, 255, 255, 0.92);
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #0d6cb5;
+      --white: #ffffff;
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--white);
+    }
 
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      /* ARKA PLAN RESMİ BURADA - image_5.png ismini kontrol et */
-      background: URL('image_5.png') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--primary);
-      line-height: 1.7;
+      position: relative;
+      background: url('omega_watermark_dense_preview.jpg') center center / cover no-repeat fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 18px;
+      overflow-x: hidden;
     }
 
     body::before {
       content: "";
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: var(--bg-overlay);
-      z-index: -1;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(5, 20, 38, 0.78), rgba(8, 26, 48, 0.9));
+      z-index: 0;
     }
 
-    nav { padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; position: absolute; top: 0; width: 100%; z-index: 1000; }
-    .nav-logo { font-weight: 800; color: var(--primary); font-size: 1.8rem; text-decoration: none; letter-spacing: 2px; }
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 760px;
+    }
 
-    .hero { padding: 180px 20px 100px; text-align: center; }
-    .hero h1 { font-size: 3.5rem; margin-bottom: 25px; max-width: 900px; margin: 0 auto 25px; line-height: 1.2; }
-    .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 800px; margin: 0 auto 40px; }
+    .card {
+      background: rgba(8, 26, 48, 0.52);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.28);
+      text-align: center;
+    }
 
-    .btn { padding: 16px 35px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; }
-    .btn-primary { background: var(--accent); color: white; }
-    .btn-primary:hover { background: #27ae60; transform: translateY(-2px); }
+    .logo {
+      width: min(280px, 68vw);
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+      filter: drop-shadow(0 10px 24px rgba(0,0,0,0.18));
+    }
 
-    .container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
-    .section-title { text-align: center; margin-bottom: 60px; }
-    .section-title h2 { font-size: 2.8rem; margin-bottom: 20px; }
-    .section-title .divider { width: 80px; height: 5px; background: var(--accent); margin: 0 auto; }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+    }
 
-    /* TESTING & INSPECTION GRID */
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-    .feature-card { background: var(--card-bg); padding: 40px; border-radius: 15px; color: var(--text-dark); transition: 0.3s; }
-    .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-    .feature-card i { font-size: 2.5rem; color: #0d4f86; margin-bottom: 20px; }
-    .feature-card h3 { margin-bottom: 15px; color: #1a365d; }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.18;
+      font-weight: 800;
+    }
 
-    /* TECHNICAL CONTENT BLOCK */
-    .content-block { background: var(--card-bg); padding: 50px; border-radius: 20px; color: var(--text-dark); margin-bottom: 40px; }
-    .directive-item { border-left: 5px solid #0d4f86; padding-left: 20px; margin-bottom: 30px; }
-    .directive-item h4 { color: #0d4f86; margin: 0 0 10px 0; font-size: 1.2rem; }
+    .subtitle {
+      margin: 18px auto 0;
+      max-width: 580px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.88);
+    }
 
-    .test-logic { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; }
-    .test-logic ul { padding-left: 20px; color: var(--text-light); }
-    .test-logic li { margin-bottom: 12px; }
+    .details {
+      margin-top: 30px;
+      display: grid;
+      gap: 14px;
+    }
 
-    footer { background: rgba(10, 31, 56, 0.95); padding: 80px 20px 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: left; max-width: 1200px; margin: 0 auto 50px; }
-    
-    @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .test-logic { grid-template-columns: 1fr; } }
+    .detail-box {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .detail-box strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.88rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .detail-box a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .chat-note {
+      margin-top: 26px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.97rem;
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    @media (max-width: 640px) {
+      .card {
+        padding: 28px 18px;
+        border-radius: 20px;
+      }
+    }
   </style>
 </head>
 <body>
+  <main class="page">
+    <section class="card">
+      <img src="omega-logo.png" alt="OMEGA logo" class="logo">
 
-  <nav>
-    <a href="#" class="nav-logo">OMEGA</a>
-  </nav>
+      <div class="eyebrow">Website Update in Progress</div>
 
-  <header class="hero">
-    <h1>Global Technical Inspection & Testing Logic</h1>
-    <p>Professional engineering support for CE directives, product safety verification, and laboratory-backed technical documentation.</p>
-    <a href="#inspection" class="btn btn-primary">Our Expertise</a>
-  </header>
+      <h1>OMEGA Testing and Inspection Technology Co. Ltd.</h1>
 
-  <section id="inspection" class="container">
-    <div class="section-title">
-      <h2>Technical Testing Methodology</h2>
-      <div class="divider"></div>
-    </div>
+      <p class="subtitle">
+        Our website is currently being updated with our new corporate face. We will be back online soon with an improved presentation.
+      </p>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <i class="fas fa-microchip"></i>
-        <h3>Electrical Safety (LVD)</h3>
-        <p>Comprehensive testing under 2014/35/EU: Ground continuity, insulation resistance, and dielectric strength tests according to EN standards.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-industry"></i>
-        <h3>Machinery Inspection</h3>
-        <p>Validation of Machinery Directive (2006/42/EC) requirements: Safety distance measurements, E-Stop logic verification, and structural stability.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-wave-square"></i>
-        <h3>EMC Verification</h3>
-        <p>Evaluating electromagnetic compatibility (2014/30/EU). Testing immunity and emission levels to ensure interference-free operation.</p>
-      </div>
-    </div>
-
-    <div class="content-block" style="margin-top: 50px;">
-      <div class="test-logic">
-        <div>
-          <h4 style="color:#0d4f86;">Why Technical Inspection is Vital?</h4>
-          <p style="color:var(--text-light);">Inspection is the rigorous process of verifying that a design meets the reality of safety. It is the core of conformity assessment:</p>
-          <ul>
-            <li>Elimination of manufacturing defects via random sampling.</li>
-            <li>Verification of certified safety components (UL, VDE, TUV).</li>
-            <li>Confirming technical manual accuracy for the end user.</li>
-          </ul>
+      <div class="details">
+        <div class="detail-box">
+          <strong>Company</strong>
+          OMEGA Testing and Inspection Technology Co. Ltd.
         </div>
-        <div>
-          <h4 style="color:#0d4f86;">Documentation Logic</h4>
-          <p style="color:var(--text-light);">A product is only as compliant as its Technical File. We ensure your data is robust:</p>
-          <ul>
-            <li><strong>Risk Assessment:</strong> ISO 12100 based hazard identification.</li>
-            <li><strong>Gap Analysis:</strong> Bridging the requirements between regional standards.</li>
-            <li><strong>Market Surveillance:</strong> Preparing files to withstand official audits.</li>
-          </ul>
+
+        <div class="detail-box">
+          <strong>Email</strong>
+          <a href="mailto:info@omegaconformity.com">info@omegaconformity.com</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="container" style="padding-top: 0;">
-    <div class="section-title">
-      <h2>Regulatory Frameworks</h2>
-      <div class="divider"></div>
-    </div>
-    <div class="content-block">
-        <div class="directive-item">
-            <h4>2006/42/EC - Machinery Safety</h4>
-            <p>Strict safety evaluation for complex industrial systems and safety components.</p>
-        </div>
-        <div class="directive-item">
-            <h4>2014/30/EU - Electromagnetic Compatibility</h4>
-            <p>Ensuring stability in environments with high electronic density.</p>
-        </div>
-        <div class="directive-item">
-            <h4>2014/35/EU - Low Voltage Safety</h4>
-            <p>Protection against electrical risks for consumer and industrial products.</p>
-        </div>
-    </div>
-  </section>
+      <p class="chat-note">Our live chat remains available on this page.</p>
+    </section>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4 style="letter-spacing: 1px;">OMEGA TECHNOLOGY</h4>
-        <p style="opacity: 0.7;">Technical bridge between engineering design and regulatory compliance.</p>
-      </div>
-      <div>
-        <h4>Compliance Services</h4>
-        <p style="opacity: 0.7;">Technical File Review<br>Safety Test Witnessing<br>Regulatory Gap Analysis<br>Standardization Support</p>
-      </div>
-      <div>
-        <h4>Communication</h4>
-        <p style="opacity: 0.7;">Email: info@omegaconformity.com<br>Support: Click the chat widget for live assistance.</p>
-      </div>
-    </div>
-    <div style="opacity: 0.5; font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1);">
-        © OMEGA Testing and Inspection Technology Co. Ltd. All rights reserved.
-    </div>
-  </footer>
+    <div class="footer">© OMEGA Testing and Inspection Technology Co. Ltd.</div>
+  </main>
 
   <script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/69dedca3e956e51c363eac78/1jm78ro5n';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function(){
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/69dedca3e956e51c363eac78/1jm78ro5n';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
   </script>
-
 </body>
 </html>
