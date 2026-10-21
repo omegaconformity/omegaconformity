@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="920" viewBox="0 0 1200 920" role="img" aria-labelledby="t d">
+<title id="t">Industrial engineering schematic</title><desc id="d">Technical illustration of an automated industrial manufacturing line, instruments and inspection reference points.</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0a2940"/><stop offset=".6" stop-color="#113d5d"/><stop offset="1" stop-color="#176081"/></linearGradient>
+ <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#86b4c9" stop-opacity=".6"/><stop offset="1" stop-color="#3a728f" stop-opacity=".15"/></linearGradient>
+ <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#9bcee5" stroke-opacity=".13" stroke-width="1"/></pattern>
+ <pattern id="fine" width="8" height="8" patternUnits="userSpaceOnUse"><path d="M8 0H0V8" fill="none" stroke="#d5eef8" stroke-opacity=".05" stroke-width=".6"/></pattern>
+ <filter id="glow"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<rect width="1200" height="920" fill="url(#bg)"/><rect width="1200" height="920" fill="url(#grid)"/><rect width="1200" height="920" fill="url(#fine)"/>
+<path d="M0 700L1200 370M0 790L1200 468M0 875L1200 552" fill="none" stroke="#b3deee" stroke-opacity=".13" stroke-width="2"/>
+<path d="M82 112H1118M82 760H1118M98 110V760M1115 110V760" stroke="#beeafa" stroke-opacity=".19" fill="none"/>
+<g stroke="#abdaec" stroke-width="3" fill="none" opacity=".83">
+ <!-- manufacturing cell housing -->
+ <path d="M200 298H960L1008 342V673H180V338Z" fill="#2b5f7d" fill-opacity=".17"/>
+ <path d="M180 338H1008M179 410H1008M180 664H1008" stroke-width="4"/>
+ <path d="M258 339V664M452 339V664M638 339V664M836 339V664" stroke-opacity=".55"/>
+ <path d="M225 452H949V598H225Z" fill="url(#steel)" fill-opacity=".28" stroke-opacity=".62"/>
+ <path d="M248 477H934M248 571H934" stroke-opacity=".33"/>
+ <!-- conveyor -->
+ <path d="M142 588H1068L1025 631H166Z" fill="#71a6bf" fill-opacity=".22"/>
+ <path d="M185 619V664M330 619V664M483 619V664M636 619V664M796 619V664M982 619V664"/>
+ <path d="M172 653H1017" stroke-width="5"/>
+ <path d="M180 600H1030" stroke-dasharray="25 13" stroke-opacity=".8"/>
+ <!-- equipment at left -->
+ <path d="M294 421V368H383V422"/><path d="M275 426H398V545H275Z" fill="#a5d2e3" fill-opacity=".11"/>
+ <path d="M293 452H378M293 471H378M293 492H354" stroke-opacity=".5"/>
+ <circle cx="366" cy="512" r="15"/>
+ <!-- robot base -->
+ <path d="M690 578H789V597H690Z" fill="#8ac1d6" fill-opacity=".2"/>
+ <path d="M720 577V539H763V577"/>
+ <path d="M741 539L700 476L723 458L765 520" stroke-width="15" stroke-linecap="round"/>
+ <path d="M701 474L798 410" stroke-width="20" stroke-linecap="round"/>
+ <path d="M792 410L833 446" stroke-width="17" stroke-linecap="round"/>
+ <path d="M833 446L847 485" stroke-width="9" stroke-linecap="round"/>
+ <path d="M833 483H863M835 483L826 500M861 483L871 500" stroke-width="5"/>
+ <circle cx="700" cy="475" r="15" fill="#124b6f"/><circle cx="792" cy="410" r="16" fill="#124b6f"/><circle cx="833" cy="445" r="11" fill="#124b6f"/>
+ <!-- control panel -->
+ <path d="M880 393H964V521H880Z" fill="#14354d" fill-opacity=".86"/>
+ <path d="M891 407H953V473H891Z" fill="#008cc4" fill-opacity=".24"/>
+ <path d="M900 441L911 432L923 448L936 427L947 430" stroke="#6fe0ff" stroke-width="2"/>
+ <circle cx="899" cy="488" r="5" fill="#5fe1ff"/><circle cx="918" cy="488" r="5"/><circle cx="939" cy="488" r="5"/>
+ <!-- upper pipes -->
+ <path d="M206 301V242H510V300M553 299V257H873V299"/>
+ <path d="M360 245V201H662V259" stroke-opacity=".48"/>
+ <path d="M206 258H510M553 273H873" stroke-opacity=".35"/>
+</g>
+<!-- measurement and inspection annotations -->
+<g fill="none" stroke="#6fd8ff" stroke-width="2">
+<circle cx="336" cy="484" r="82" stroke-dasharray="7 10"/><path d="M270 408L230 367H133M391 528L453 579H570"/>
+<circle cx="742" cy="484" r="125" stroke-dasharray="6 11" stroke-opacity=".58"/><path d="M854 450L1010 300H1081"/>
+<circle cx="336" cy="484" r="4" fill="#79e5ff"/><circle cx="742" cy="484" r="4" fill="#79e5ff"/>
+</g>
+<g fill="#a8e8ff" font-family="Arial, sans-serif" font-size="17" letter-spacing="2">
+<text x="132" y="353">CHECK POINT 01</text><text x="458" y="603">DIMENSION CHECK</text><text x="934" y="282">SYSTEM REVIEW</text>
+</g>
+<g fill="#d9f4fc" font-family="Arial, sans-serif">
+ <text x="100" y="85" font-size="18" letter-spacing="5" opacity=".82">TECHNICAL INSPECTION / PRODUCT ASSESSMENT</text>
+ <text x="100" y="813" font-size="16" letter-spacing="4" opacity=".57">VISUAL • MECHANICAL • DOCUMENTARY</text>
+</g>
+<path d="M1050 100h39m-20-20v40M110 820h40m-20-20v40" stroke="#6fd8ff" opacity=".6" stroke-width="2"/>
+</svg>
