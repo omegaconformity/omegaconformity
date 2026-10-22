@@ -80,7 +80,7 @@
       if (current !== requestId) return;
       if (!response.ok) throw new Error(result.error || 'Verification is temporarily unavailable.');
       if (!result.found) {
-        showResult('No matching record found', 'Please check the document reference and try again. For assistance, contact info@omegaconformity.com.', 'missing');
+        showResult('No matching record found', 'Please check the document number. If you still cannot find it, email info@omegaconformity.com and we will help you check.', 'missing');
       } else {
         const status = String(result.record.status || 'Active');
         const message = status === 'Active'
