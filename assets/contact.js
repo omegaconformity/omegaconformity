@@ -37,7 +37,7 @@
       whatsapp:kind==='service'?$('contact-whatsapp').value:'',
       wechat:kind==='service'?$('contact-wechat').value:'',
       telegram:kind==='service'?$('contact-telegram').value:'',
-      message:$('contact-message').value,website:$('contact-website').value,
+      message:$('contact-message').value,omegaExtra:$('contact-trap').value,
       acceptPrivacy:$('contact-privacy').checked
     };
     // Enable when optional Turnstile is configured. The secret is never embedded here.
@@ -49,7 +49,11 @@
       const res=await fetch('/api/contact',{method:'POST',credentials:'omit',cache:'no-store',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)});
       let data;try{data=await res.json();}catch{throw Error('Unable to process your request at this time.');}
       if(!res.ok || !data.accepted)throw Error(data.error||'Unable to send your inquiry.');
-      output('Inquiry received','Thank you. Your reference is '+(data.reference||'registered')+'. We will review your message and reply using the email address you provided.');
+      // An actual inquiry must have a uniquely issued server-side Q- reference.
+      if(typeof data.reference !== 'string' || !/^Q-[A-Z0-9]{8}-[A-Z0-9]+$/.test(data.reference)) {
+        throw Error('Your message could not be confirmed. Please try again.');
+      }
+      output('Inquiry received','Thank you. Your reference is '+data.reference+'. We will review your message and reply using the email address you provided.');
       form.reset();setMode();if(window.turnstile?.reset)window.turnstile.reset();
     }catch(e){output('Inquiry not sent',e.message||'Please try again later.',true);if(window.turnstile?.reset)window.turnstile.reset();}
     finally{pending=false;submit.disabled=false;submit.textContent='Send inquiry';}
