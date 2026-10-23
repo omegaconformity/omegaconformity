@@ -39,12 +39,13 @@
     const data = [
       ['Document number', record.number],
       ['Document type', record.type],
-      ['Issued by', 'OMEGA Testing and Inspection Technology Co. Ltd.'],
+      ['Registered by', 'OMEGA Testing and Inspection Technology Co. Ltd.'],
       ['Issue date', record.issueDate],
       ['Applicant', record.applicant],
       ['Product / equipment', record.product],
       ['Model / designation', record.model],
-      ['Document status', record.status]
+      ['Document status', record.status],
+      ['Status note', record.statusNote]
     ];
     const table = createNode('table', undefined, 'record-table');
     for (const [label, value] of data) {
@@ -53,9 +54,10 @@
       row.append(createNode('th', label));
       const cell = document.createElement('td');
       if (label === 'Document status') {
-        cell.append(createNode('span', value, 'status-pill ' + String(value).toLowerCase()));
+        cell.append(createNode('span', value, 'status-pill ' + String(value).toLowerCase().replace(/\s+/g, '-')));
       } else {
         cell.textContent = value;
+        if (label === 'Model / designation' || label === 'Status note') cell.classList.add('multiline-value');
       }
       row.append(cell);
       table.append(row);
@@ -68,6 +70,8 @@
     const number = input.value.trim();
     if (!number) return;
     const current = ++requestId;
+    const inquiryLink = document.getElementById('verification-inquiry');
+    if (inquiryLink) inquiryLink.href = 'contact.html?type=document&number=' + encodeURIComponent(number);
     submit.disabled = true;
     submit.replaceChildren(createNode('span', '', 'loading-dot'), document.createTextNode('Checking record…'));
     output.className = 'verify-result';
@@ -80,13 +84,14 @@
       if (current !== requestId) return;
       if (!response.ok) throw new Error(result.error || 'Verification is temporarily unavailable.');
       if (!result.found) {
-        showResult('No matching record found', 'Please check the document number. If you still cannot find it, email info@omegaconformity.com and we will help you check.', 'missing');
+        showResult('No matching record found', 'Please check the document number. If the document is still missing, use our document inquiry form and include its reference number.', 'missing');
       } else {
         const status = String(result.record.status || 'Active');
         const message = status === 'Active'
-          ? 'An Omega-issued document record matching this reference has been found.'
-          : 'An Omega-issued document record was found, but its current status is ' + status + '.';
-        showResult('Document record found', message, status === 'Active' ? 'found' : 'error', result.record);
+          ? 'An active OMEGA document record matching this reference has been found.'
+          : 'A record matching this reference was found in the OMEGA registry. Its current status is ' + status + '. This does not mean the document is approved or active.';
+        const state = status === 'Active' ? 'found' : (status === 'Pending Approval' || status === 'Under Review' ? 'pending' : 'error');
+        showResult('Document record found', message, state, result.record);
       }
     } catch (error) {
       if (current === requestId) showResult('Verification unavailable', error.message || 'Please try again later.', 'error');
