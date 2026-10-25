@@ -39,7 +39,7 @@
     const data = [
       ['Document number', record.number],
       ['Document type', record.type],
-      ['Registered by', 'OMEGA Testing and Inspection Technology Co. Ltd.'],
+      ['Registered by', 'OMEGA Testing, Inspection and Technical Services'],
       ['Issue date', record.issueDate],
       ['Applicant', record.applicant],
       ['Product / equipment', record.product],

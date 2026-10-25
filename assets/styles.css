@@ -23,3 +23,12 @@
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.form-grid>.text-field{min-width:0}.inquiry-types{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:5px 0 16px;padding:0;border:0}.inquiry-types legend{grid-column:1/-1;padding:0}.inquiry-choice{display:flex;align-items:flex-start;gap:10px;padding:14px;border:1px solid #cbdde6;cursor:pointer}.inquiry-choice input{accent-color:var(--blue);margin-top:5px}.inquiry-choice strong,.inquiry-choice small{display:block;line-height:1.4}.inquiry-choice strong{font-size:13px;color:var(--navy)}.inquiry-choice small{color:var(--muted);font-size:11px}.inquiry-fields{margin:8px 0 6px}.inquiry-fields[hidden]{display:none}.contact-hint{margin:17px 0 5px!important;font-size:12px!important}.consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#536f80;margin:20px 0}.consent input{margin-top:4px;accent-color:var(--blue)}.form-actions{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.honeypot{position:absolute!important;left:-10000px!important;top:auto!important;width:1px;height:1px;overflow:hidden}.contact-side h3:not(:first-child){margin-top:26px}.contact-side p{margin-bottom:9px}
 @media(max-width:900px){.contact-layout{grid-template-columns:1fr}}
 @media(max-width:600px){.form-grid,.inquiry-types{grid-template-columns:1fr}.contact-form-shell .form-label{margin-top:16px}}
+
+/* OMEGA 2026 brand update: supplied logo, full corporate name. */
+.header-row{min-height:113px}
+.brand{max-width:170px}
+.brand img{display:block;width:164px;height:auto;object-fit:contain}
+.footer-logo{display:block;width:174px;height:auto;padding:9px 12px;border-radius:2px;background:#fff}
+@media(max-width:1050px){.header-row{min-height:105px}.brand{max-width:148px}.brand img{width:145px}.nav{gap:15px}}
+@media(max-width:800px){.header-row{min-height:96px}.brand{max-width:135px}.brand img{width:130px}}
+@media(max-width:540px){.header-row{min-height:86px}.brand{max-width:112px}.brand img{width:110px}.footer-logo{width:168px}}
